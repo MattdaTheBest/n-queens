@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://foehg34xwyd1"]
+
+[ext_resource type="Texture2D" uid="uid://b5bctwkfg8snh" path="res://sprites/black_tile.png" id="1_muwej"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ntb7"]
+texture = ExtResource("1_muwej")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 0, 32, 32)
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_8ntb7")

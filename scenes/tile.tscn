@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8ugh0fr8xftg"]
+
+[ext_resource type="Script" path="res://scripts/tile.gd" id="1_hnh57"]
+[ext_resource type="Texture2D" uid="uid://b5bctwkfg8snh" path="res://sprites/black_tile.png" id="2_sd3m6"]
+[ext_resource type="FontFile" uid="uid://b0iirjfm85vb5" path="res://fonts/runescape_uf.ttf" id="3_m1exc"]
+[ext_resource type="Texture2D" uid="uid://cu7lmip13uxeu" path="res://sprites/selection_dot.png" id="4_sntp0"]
+
+[node name="Tile" type="Control"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 32.0
+offset_bottom = 32.0
+mouse_filter = 2
+script = ExtResource("1_hnh57")
+
+[node name="texture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(16, 16)
+texture = ExtResource("2_sd3m6")
+
+[node name="pos" type="RichTextLabel" parent="texture"]
+visible = false
+modulate = Color(1, 1, 1, 0.588235)
+z_index = 1
+z_as_relative = false
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -17.0
+offset_right = 9.0
+offset_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("3_m1exc")
+theme_override_font_sizes/normal_font_size = 16
+text = "A1"
+fit_content = true
+
+[node name="texture_bottom" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_top = 32.0
+offset_right = 32.0
+offset_bottom = 64.0
+
+[node name="selection" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(1e-05, 1e-05)
+pivot_offset = Vector2(16, 16)
+texture = ExtResource("4_sntp0")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+editor_only = false

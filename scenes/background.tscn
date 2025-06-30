@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgx36dyfbkrt3"]
+
+[ext_resource type="Shader" path="res://scenes/background.gdshader" id="1_jaj26"]
+[ext_resource type="Texture2D" uid="uid://dky4knmflkvlk" path="res://sprites/nyx8-32x.png" id="2_gvqvq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i7wpg"]
+shader = ExtResource("1_jaj26")
+shader_parameter/checker_size = 256.0
+shader_parameter/wave_strength = 8.0
+shader_parameter/cell_distortion = 4.0
+shader_parameter/time_scale = 1.0
+shader_parameter/transition_speed = 0.25
+shader_parameter/outline_thickness = 1.5
+shader_parameter/darken = 0.25
+shader_parameter/palette = ExtResource("2_gvqvq")
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="TextureRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_i7wpg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

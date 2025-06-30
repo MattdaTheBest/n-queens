@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://bsj6df0wn74nl"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_0sbg2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y8ebw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yqgwm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v7v3b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y1oxw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k0e0n"]
+
+[sub_resource type="Theme" id="Theme_skrpj"]
+VScrollBar/icons/decrement = SubResource("ImageTexture_0sbg2")
+VScrollBar/icons/decrement_highlight = SubResource("ImageTexture_0sbg2")
+VScrollBar/icons/decrement_pressed = SubResource("ImageTexture_0sbg2")
+VScrollBar/icons/increment = SubResource("ImageTexture_0sbg2")
+VScrollBar/icons/increment_highlight = SubResource("ImageTexture_0sbg2")
+VScrollBar/icons/increment_pressed = SubResource("ImageTexture_0sbg2")
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_y8ebw")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_yqgwm")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_v7v3b")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_y1oxw")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_k0e0n")
+
+[node name="solution_holders" type="ScrollContainer"]
+offset_right = 76.0
+offset_bottom = 93.0
+mouse_filter = 2
+theme = SubResource("Theme_skrpj")
+
+[node name="solutions_hbox2" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+theme = SubResource("Theme_skrpj")
+theme_override_constants/separation = 0

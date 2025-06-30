@@ -1,0 +1,100 @@
+[gd_scene load_steps=4 format=3 uid="uid://lkpogxq1d3tl"]
+
+[ext_resource type="Script" path="res://scripts/queen.gd" id="1_e2plx"]
+[ext_resource type="Texture2D" uid="uid://1bcwtnu36qyf" path="res://sprites/black_queen.png" id="1_rftwd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpdw1"]
+size = Vector2(28, 28)
+
+[node name="queen" type="Control"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1120.0
+offset_bottom = -616.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e2plx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -13.0
+offset_right = 12.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_rftwd")
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+editor_only = false
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_qpdw1")
+
+[node name="raycasts" type="Node2D" parent="."]
+position = Vector2(16, 16)
+
+[node name="RayCast2D" type="RayCast2D" parent="raycasts"]
+target_position = Vector2(0, 10000)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D2" type="RayCast2D" parent="raycasts"]
+rotation = 1.5708
+target_position = Vector2(0, 10000)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D3" type="RayCast2D" parent="raycasts"]
+rotation = -3.14159
+target_position = Vector2(0, 10000)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D4" type="RayCast2D" parent="raycasts"]
+rotation = -1.5708
+target_position = Vector2(0, 10000)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D5" type="RayCast2D" parent="raycasts"]
+rotation = 0.785398
+scale = Vector2(1, 1)
+target_position = Vector2(0, 10000)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D6" type="RayCast2D" parent="raycasts"]
+rotation = 2.35619
+scale = Vector2(1, 1)
+target_position = Vector2(0, 10000)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D7" type="RayCast2D" parent="raycasts"]
+rotation = -2.35619
+target_position = Vector2(0, 10000)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RayCast2D8" type="RayCast2D" parent="raycasts"]
+rotation = -0.785398
+scale = Vector2(1, 1)
+target_position = Vector2(0, 10000)
+collide_with_areas = true
+collide_with_bodies = false

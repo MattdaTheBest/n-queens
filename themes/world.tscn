@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b60w0dqp1cu00"]
+
+[ext_resource type="PackedScene" uid="uid://dyud56royafpp" path="res://test_scene.tscn" id="1_y8ne1"]
+
+[node name="world" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="ZoomRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="test_scene" parent="ZoomRoot" node_paths=PackedStringArray("zoom_root") instance=ExtResource("1_y8ne1")]
+layout_mode = 1
+zoom_root = NodePath("..")
+metadata/_edit_use_anchors_ = true

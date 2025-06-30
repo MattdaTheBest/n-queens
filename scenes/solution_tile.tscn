@@ -1,0 +1,106 @@
+[gd_scene load_steps=13 format=3 uid="uid://cibxctqm42dxf"]
+
+[ext_resource type="Script" path="res://scripts/solution_tile.gd" id="1_adiy3"]
+[ext_resource type="Theme" uid="uid://dugrj3ou57s23" path="res://themes/white_panel.tres" id="2_6j1v0"]
+[ext_resource type="Theme" uid="uid://mx7mvu5h2ea" path="res://themes/true_panel.tres" id="2_f1gmb"]
+[ext_resource type="FontFile" uid="uid://p283b22b13e7" path="res://fonts/PressStart2P.ttf" id="3_rbhqi"]
+[ext_resource type="Texture2D" uid="uid://d3tt8ycplpbq7" path="res://sprites/check_mark.png" id="4_kqhqy"]
+[ext_resource type="Texture2D" uid="uid://xnhhgarop5yr" path="res://sprites/show_button.png" id="5_2rjpj"]
+[ext_resource type="Theme" uid="uid://bb45xaqjst74m" path="res://themes/black_panel.tres" id="6_h332q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ksygv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yoatn"]
+texture = ExtResource("5_2rjpj")
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e7c7t"]
+texture = ExtResource("5_2rjpj")
+texture_margin_left = 4.0
+texture_margin_top = 5.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_42t7l"]
+texture = ExtResource("5_2rjpj")
+texture_margin_left = 4.0
+texture_margin_top = 7.0
+texture_margin_right = 4.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(32, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2i002"]
+texture = ExtResource("5_2rjpj")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="solution_tab" type="Node2D"]
+script = ExtResource("1_adiy3")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -28.0
+offset_top = -10.0
+offset_right = 14.0
+offset_bottom = 6.0
+mouse_filter = 2
+theme = ExtResource("2_6j1v0")
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 2.0
+offset_top = -7.0
+offset_right = 10.0
+offset_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource("2_f1gmb")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -24.0
+offset_top = -10.0
+offset_right = -8.0
+offset_bottom = 7.0
+theme_override_colors/font_color = Color(0.305882, 0.286275, 0.372549, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = -1
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("3_rbhqi")
+theme_override_font_sizes/font_size = 8
+text = "92"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckMark" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(6, -6)
+texture = ExtResource("4_kqhqy")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 14.0
+offset_top = -11.0
+offset_right = 30.0
+offset_bottom = 5.0
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ksygv")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_yoatn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e7c7t")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_42t7l")
+theme_override_styles/normal = SubResource("StyleBoxTexture_2i002")
+
+[node name="Panel3" type="Panel" parent="."]
+z_index = -1
+offset_left = -32.0
+offset_top = -14.0
+offset_right = 32.0
+offset_bottom = 15.0
+mouse_filter = 2
+theme = ExtResource("6_h332q")
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

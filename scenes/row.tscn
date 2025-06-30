@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dxjcdn8v0h1wp"]
+
+[node name="row" type="HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 0

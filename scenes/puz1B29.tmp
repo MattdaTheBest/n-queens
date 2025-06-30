@@ -1,0 +1,178 @@
+[gd_scene load_steps=5 format=3 uid="uid://sf5sun1y2gv"]
+
+[ext_resource type="Script" path="res://scripts/puzzle_scene.gd" id="1_gaml7"]
+[ext_resource type="FontFile" uid="uid://b0iirjfm85vb5" path="res://fonts/runescape_uf.ttf" id="2_qbtb3"]
+[ext_resource type="Theme" uid="uid://bt02q116gfnti" path="res://themes/button_theme.tres" id="3_5xoe8"]
+[ext_resource type="PackedScene" uid="uid://cibxctqm42dxf" path="res://solution_tile.tscn" id="4_1ylbq"]
+
+[node name="puzzle_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gaml7")
+
+[node name="queen_container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = -16
+
+[node name="row_container" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 5.0
+offset_top = 22.0
+offset_right = 97.0
+offset_bottom = 34.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("2_qbtb3")
+theme_override_font_sizes/normal_font_size = 16
+text = "Solutions Found"
+scroll_active = false
+
+[node name="buttons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 32.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SOLVE" type="Button" parent="buttons"]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 2
+theme = ExtResource("3_5xoe8")
+text = "Solve"
+
+[node name="Show_next_sol" type="Button" parent="buttons"]
+layout_mode = 2
+theme = ExtResource("3_5xoe8")
+text = ">"
+
+[node name="Control" parent="buttons" instance=ExtResource("4_1ylbq")]
+visible = false
+position = Vector2(0, 41)
+
+[node name="solutions_scroll" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 33.0
+offset_right = 48.0
+offset_bottom = 122.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="solutions_scroll"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Control" type="Control" parent="solutions_scroll/VBoxContainer"]
+layout_mode = 2
+
+[node name="solution_tab" parent="solutions_scroll/VBoxContainer/Control" instance=ExtResource("4_1ylbq")]
+
+[node name="Control2" type="Control" parent="solutions_scroll/VBoxContainer"]
+layout_mode = 2
+
+[node name="solution_tab" parent="solutions_scroll/VBoxContainer/Control2" instance=ExtResource("4_1ylbq")]
+
+[node name="Control3" type="Control" parent="solutions_scroll/VBoxContainer"]
+layout_mode = 2
+
+[node name="solution_tab" parent="solutions_scroll/VBoxContainer/Control3" instance=ExtResource("4_1ylbq")]
+
+[node name="Control4" type="Control" parent="solutions_scroll/VBoxContainer"]
+layout_mode = 2
+
+[node name="solution_tab" parent="solutions_scroll/VBoxContainer/Control4" instance=ExtResource("4_1ylbq")]
+
+[node name="Control5" type="Control" parent="solutions_scroll/VBoxContainer"]
+layout_mode = 2
+
+[node name="solution_tab" parent="solutions_scroll/VBoxContainer/Control5" instance=ExtResource("4_1ylbq")]
+
+[node name="Control6" type="Control" parent="solutions_scroll/VBoxContainer"]
+layout_mode = 2
+
+[node name="solution_tab" parent="solutions_scroll/VBoxContainer/Control6" instance=ExtResource("4_1ylbq")]
+
+[node name="Control7" type="Control" parent="solutions_scroll/VBoxContainer"]
+layout_mode = 2
+
+[node name="solution_tab" parent="solutions_scroll/VBoxContainer/Control7" instance=ExtResource("4_1ylbq")]
+
+[node name="Control8" type="Control" parent="solutions_scroll/VBoxContainer"]
+layout_mode = 2
+
+[node name="solution_tab" parent="solutions_scroll/VBoxContainer/Control8" instance=ExtResource("4_1ylbq")]
+
+[node name="Control9" type="Control" parent="solutions_scroll/VBoxContainer"]
+layout_mode = 2
+
+[node name="solution_tab" parent="solutions_scroll/VBoxContainer/Control9" instance=ExtResource("4_1ylbq")]
+
+[node name="Control10" type="Control" parent="solutions_scroll/VBoxContainer"]
+layout_mode = 2
+
+[node name="solution_tab" parent="solutions_scroll/VBoxContainer/Control10" instance=ExtResource("4_1ylbq")]
+
+[node name="Control11" type="Control" parent="solutions_scroll/VBoxContainer"]
+layout_mode = 2
+
+[node name="solution_tab" parent="solutions_scroll/VBoxContainer/Control11" instance=ExtResource("4_1ylbq")]
+
+[node name="Control12" type="Control" parent="solutions_scroll/VBoxContainer"]
+layout_mode = 2
+
+[node name="solution_tab" parent="solutions_scroll/VBoxContainer/Control12" instance=ExtResource("4_1ylbq")]
+
+[node name="Control13" type="Control" parent="solutions_scroll/VBoxContainer"]
+layout_mode = 2
+
+[node name="solution_tab" parent="solutions_scroll/VBoxContainer/Control13" instance=ExtResource("4_1ylbq")]
+
+[node name="Control14" type="Control" parent="solutions_scroll/VBoxContainer"]
+layout_mode = 2
+
+[node name="solution_tab" parent="solutions_scroll/VBoxContainer/Control14" instance=ExtResource("4_1ylbq")]
+
+[node name="Control15" type="Control" parent="solutions_scroll/VBoxContainer"]
+layout_mode = 2
+
+[node name="solution_tab" parent="solutions_scroll/VBoxContainer/Control15" instance=ExtResource("4_1ylbq")]
+
+[connection signal="pressed" from="buttons/SOLVE" to="." method="_on_solve_pressed"]
+[connection signal="pressed" from="buttons/Show_next_sol" to="." method="_on_show_next_sol_pressed"]

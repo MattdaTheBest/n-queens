@@ -1,0 +1,140 @@
+[gd_scene load_steps=11 format=3 uid="uid://sf5sun1y2gv"]
+
+[ext_resource type="Script" path="res://scripts/puzzle_scene.gd" id="1_gaml7"]
+[ext_resource type="FontFile" uid="uid://b0iirjfm85vb5" path="res://fonts/runescape_uf.ttf" id="2_qbtb3"]
+[ext_resource type="Theme" uid="uid://bt02q116gfnti" path="res://themes/button_theme.tres" id="3_5xoe8"]
+[ext_resource type="Texture2D" uid="uid://b8ws4cjgy5oh" path="res://sprites/top.png" id="5_05ny2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_psqij"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tp3f0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f0bv7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pakbc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i4cwm"]
+
+[sub_resource type="Theme" id="Theme_jshyk"]
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_psqij")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_tp3f0")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_f0bv7")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_pakbc")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_i4cwm")
+
+[node name="puzzle_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gaml7")
+
+[node name="queen_container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = -16
+
+[node name="row_container" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 5.0
+offset_top = 22.0
+offset_right = 97.0
+offset_bottom = 34.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("2_qbtb3")
+theme_override_font_sizes/normal_font_size = 16
+text = "Solutions Found"
+scroll_active = false
+
+[node name="buttons" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(62, 21)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -4.0
+offset_right = 47.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Show_next_sol" type="Button" parent="buttons"]
+visible = false
+layout_mode = 2
+theme = ExtResource("3_5xoe8")
+text = ">"
+
+[node name="SOLVE" type="Button" parent="buttons"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_5xoe8")
+text = "Input"
+
+[node name="solutions_scroll" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 33.0
+offset_right = 49.0
+offset_bottom = 122.0
+theme = SubResource("Theme_jshyk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="solutions_scroll"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 18
+
+[node name="top_sols" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -39.0
+offset_right = 45.0
+offset_bottom = -33.0
+texture = ExtResource("5_05ny2")
+
+[node name="bot_sols" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -22.0
+offset_right = 49.0
+offset_bottom = -16.0
+texture = ExtResource("5_05ny2")
+
+[connection signal="pressed" from="buttons/Show_next_sol" to="." method="_on_show_next_sol_pressed"]
+[connection signal="pressed" from="buttons/SOLVE" to="." method="_on_solve_pressed"]

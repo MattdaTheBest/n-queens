@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyud56royafpp"]
+
+[ext_resource type="Script" path="res://test_scene.gd" id="1_igikg"]
+[ext_resource type="Theme" uid="uid://bt02q116gfnti" path="res://themes/button_theme.tres" id="2_fbn35"]
+
+[node name="test_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_igikg")
+
+[node name="board_nav" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_right = 34.0
+offset_bottom = 29.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="left" type="Button" parent="board_nav"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme = ExtResource("2_fbn35")
+text = "<"
+
+[node name="right" type="Button" parent="board_nav"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme = ExtResource("2_fbn35")
+text = ">"
+
+[node name="submit_clear" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_right = 48.0
+offset_bottom = 29.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="input" type="Button" parent="submit_clear"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme = ExtResource("2_fbn35")
+text = "Input"
+
+[node name="clear" type="Button" parent="submit_clear"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme = ExtResource("2_fbn35")
+text = "Clear"
+
+[node name="queen_container" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 32.0
+offset_bottom = 12.0
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[connection signal="pressed" from="board_nav/left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="board_nav/right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="submit_clear/input" to="." method="_on_input_pressed"]
+[connection signal="pressed" from="submit_clear/clear" to="." method="_on_clear_pressed"]
